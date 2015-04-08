@@ -1,0 +1,107 @@
+/*NAV BAR BUSINESS*/
+
+div .tile-area.nav-bar{
+    
+}
+div .tile-area.nav-bar .tile-group.two{
+    margin: 5px;
+    margin-right: 0;
+    margin-bottom: 0;
+    float: left;
+}
+div .tile-area.nav-bar .tile-group.two .tile.manual-adjust{
+    text-align: center;
+    line-height: 110px;
+}
+div .tile-area.nav-bar .tile-group.two .tile.manual-adjust img{
+    width: 60%;
+    height: auto;
+    vertical-align: middle;
+}
+div .tile-area.nav-bar .tile-group.two .tile.log-in{
+    display: table-cell;
+    text-align: center;
+}
+div .tile-area.nav-bar .tile-group.two .tile.log-in .tile-status{
+    color: black;
+}
+div .tile-area.nav-bar .tile-group.two .tile.selected{
+    display: table-cell;
+    width: 120px;
+    height: 120px;
+    background-color: #11337b;
+    background-image: url('information-icon.png');
+    cursor: default;
+    text-align: center;
+}
+div .tile-area.nav-bar .tile-group.two .tile.selected .tile-status{
+    color: #11337b;
+    background-color: white;
+    margin-bottom: -5px;
+}
+
+/*TEXT AREA BUSINESS*/
+
+div .tile-area.text-area{
+    margin: 0; margin-top: -5px;
+}
+div .tab-content{
+    height: 610px;
+    width: 1290px;
+    margin-left: 5px;
+    background-color: #11337b;
+    border: 1px solid #35569a;
+    text-decoration-color: white;
+    padding: 1em;
+}
+div .page-content{
+    float: left; 
+    width: 45%;
+    margin-top: 10px;
+}
+div .page-content#left{
+    float: left;
+    margin-left: 25px;
+}
+div .page-content#right{
+    float: right;
+    margin-right: 25px;
+}
+div .page-content p{
+    color: white;
+    margin-top: 5px;
+    margin-right: 8px;
+}
+div .page-content li{
+    color: white;
+}
+input.edit-sql{
+    float: right;
+    width: 5%;
+    height: auto;
+}
+
+/*BALLOON BUSINESS*/
+
+div .balloon#balloon{
+    position: absolute; 
+    height: 310px; 
+    width: 695px; 
+    display: none;
+}
+div .balloon .tile-area{
+    margin: 15px 0 0 15px;
+    padding: 10px 0 0 10px;
+}
+div .balloon .tile-area .tile{
+    display: table-cell;
+    width: 120px;
+    height: 120px;
+    background-color: #11337b;
+    text-align: center;
+    vertical-align: bottom;
+}
+div .balloon .tile-area .tile .tile-status{
+    color: #11337b;
+    background-color: white;
+}
