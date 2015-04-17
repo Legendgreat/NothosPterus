@@ -36,7 +36,7 @@
 
         try{
             $statement = $conn->prepare("INSERT INTO test (content) VALUES (?)");
-            $statement->bindValue(1, $naam, PDO::PARAM_STR);
+            $statement->bindValue(1, $newcontent, PDO::PARAM_STR);
             $statement->execute();
 
             header("location: index.php");
@@ -64,13 +64,18 @@
         }
     }
     
-    function edit($id){
+    function edit($id, $newcontent){
         global $conn;
         
         try{
-            $statement = $conn->prepare("");
+            $statement = $conn->prepare("UPDATE test SET content=? WHERE id=?");
+            $statement->bindValue(1, $newcontent, PDO::PARAM_STR);
+            $statement->bindValue(2, $id, PDO::PARAM_STR);
+            $statement->execute();
+            
+            header('location: '. $_POST["lastpage"]);
         } catch (PDOException $ex) {
-
+            print_r($ex);
         }
     }
 ?>
@@ -97,7 +102,9 @@
         </script>
     </head>
     <body>
-        <!-- Place this in the body of the page content -->
+        <div id="editpage" style="width: 100%; text-align: center;">
+            Currently editing textbox id [<?php echo $_POST["id"];?>] from the page [<?php echo $_POST["lastpage"];?>].
+        </div><br>
         <form method="post" action="editsqltext.php">
             <textarea name="content" style="width:100%;"><?php
                 if(isset($content)){
@@ -106,7 +113,8 @@
             ?></textarea>
             <div id = "knoppenbalk" style="width: 100%; text-align: center; margin-top: 10px; text-">
                 <input class = "btn btn-default left" type = "submit" class = "knop" name = "submit" value="<?php echo $buttontext;?>" style="width: 40%; height: 50px;"/>
-                <input type="hidden" id="id" name="id" value="<?php echo $_POST["id"];?>">
+                <input type="hidden" id="id" name="id" value="<?php echo $_POST["id"];?>" />
+                <input type="hidden" id="lastpage" name="lastpage" value="<?php echo $_POST["lastpage"];?>" />
             </div>
         </form>
     </body>

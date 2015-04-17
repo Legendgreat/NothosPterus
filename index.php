@@ -1,19 +1,8 @@
 <!DOCTYPE html>
 
 <?php
-    $servername = "localhost";
-    $username = "talentpass";
-    $password = "9n0dehPsLR";
-
-    // Create connection
-    try {
-        $conn = new PDO("mysql:host=$servername;dbname=talentpass_db", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        // connected to database succesfully
-    } catch (PDOException $ex) {
-        echo "Connection failed: " . $ex->getMessage();
-    }
+    $thispage = "www_talentdeveloper.php";
+    session_start();
 ?>
 
 <html lang="en">
@@ -23,136 +12,168 @@
         <link rel="stylesheet" href="css/metro-bootstrap.css">
         <link rel="stylesheet" href="css/metro-bootstrap-responsive.css">
         <link rel="stylesheet" href="css/iconFont.css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
         <script src="js/jquery/jquery.min.js"></script>
         <script src="js/jquery/jquery.widget.min.js"></script>
         <script src="js/metro/metro.min.js"></script>
         <script src="js/jquery/script.js"></script>
+        
+        
     </head>
     <body class="metro" style="background-color: white;">
         <div class="container10x6" style="background-color: black;">
             <div class="main-content clearfix">
-                <div class="tile-area no-padding bg-black clearfix">
-                    <div class="tile-group ten no-padding clearfix" style="margin: 5px; margin-right: 0; float: left;">
+                <div class="tile-area nav-bar no-padding clearfix">
+                    <div class="tile-group two no-padding clearfix">
                         <!-- tile for opening balloon pop up menu -->
-                        <div class="tile menutile bg-blue" id="contextmenu">
+                        <div class="tile menutile bg-blue">
                             <div class="tile-content icon">
                                 <i class="icon-grid"></i>
                             </div>
                         </div>
-                        <a href="trm_talentdeveloper.html">
-                            <div class="tile bg-white" style="display: table-cell; text-align: center;">
-                                <span class="tile-status title" style="color: #11337b; background-color: white;">
-                                    swek
-                                </span>
-                            </div>
-                        </a>
-                        <a href="trm_talentdeveloper.html">
-                            <div class="tile bg-white" style="display: table-cell; text-align: center;">
-                                <span class="tile-status title" style="color: #11337b; background-color: white;">
-                                    swek
-                                </span>
-                            </div>
-                        </a>
-                        <div class="tile no-outline border selected" style="display: table-cell; width: 120px; height: 120px; background-color: #11337b; background-image: url('information-icon.png'); cursor: default; text-align: center; vertical-align: bottom;">
-                            <img src="images/information-icon.png" style="display: ">
-                            <span class="tile-status title unselectable" style="color: #11337b; background-color: white;">
-                                Informatie
+                        <div class="tile bg-orange manual-adjust">
+                            <img src="images/english-flag.png">
+                        </div>
+                        
+                        <?php
+                            if($_SESSION["usertype"] == "administrator"){
+                                ?>
+                                    <a href="www_talentdeveloper_logout.php">
+                                        <div class="tile log-in bg-orange">
+                                            <img src="images/Tabuser08 changlogin-normal.png" style="">
+                                            <span class="tile-status title unselectable">Log Out</span>
+                                        </div>
+                                    </a>
+                                <?php
+                            } else {
+                                ?>
+                                    <a href="www_talentdeveloper_login.php">
+                                        <div class="tile log-in bg-orange">
+                                            <img src="images/Tabuser08 changlogin-normal.png" style="">
+                                            <span class="tile-status title unselectable">Log In</span>
+                                        </div>
+                                    </a>
+                                <?php
+                            }
+                        ?>
+                        
+                        <div class="tile no-outline border selected" id="contextmenu">
+                            
+                            <img src="images/contextmenu/insight-icon.png" style="">
+                            <span class="tile-status title unselectable">
+                                Inzicht
                             </span>
                         </div>
-                        <a href="trm_talentdeveloper.html">
-                            <div class="tile bg-white" style="display: table-cell; text-align: center;">
-                                <span class="tile-status title" style="color: #11337b; background-color: white;">
-                                    swek
-                                </span>
-                            </div>
-                        </a>
-                        <a href="trm_talentdeveloper.html">
-                            <div class="tile bg-white" style="display: table-cell; text-align: center;">
-                                <span class="tile-status title" style="color: #11337b; background-color: white;">
-                                    swek
-                                </span>
-                            </div>
-                        </a>
-                        <a href="trm_talentdeveloper.html">
-                            <div class="tile bg-white" style="display: table-cell; text-align: center;">
-                                <span class="tile-status title" style="color: #11337b; background-color: white;">
-                                    swek
-                                </span>
-                            </div>
-                        </a>
-                        <a href="trm_talentdeveloper.html">
-                            <div class="tile bg-white" style="display: table-cell; text-align: center;">
-                                <span class="tile-status title" style="color: #11337b; background-color: white;">
-                                    swek
-                                </span>
-                            </div>
-                        </a>
-                        <a href="trm_talentdeveloper.html">
-                            <div class="tile bg-white" style="display: table-cell; text-align: center;">
-                                <span class="tile-status title" style="color: #11337b; background-color: white;">
-                                    swek
-                                </span>
-                            </div>
-                        </a>
-                        <a href="www_talentdeveloper.php">
-                            <div class="tile bg-white" style="display: table-cell; text-align: center;">
-                                <img src="images/Butterfly-icon.png">
-                                <span class="tile-status title" style="color: red;">
-                                    Uitloggen
-                                </span>
-                            </div>
-                        </a>
                     </div>
-                </div>
-                <div class="tile-area no-padding clearfix" style="margin: 0; margin-top: -5px;">
-                    <div class="tab-content" style="height: 740px; width: 1290px; margin-left: 5px; background-color: #11337b; border: 1px solid #35569a;">
-                        <div style="text-decoration-color: white; padding: 1em;">
-                            
+                    <div class="tile-group no-padding clearfix" style="margin: 5px; margin-left: 0; margin-right: 0;">
+                        <a href="https://trm.talentdeveloper.com/newdemo">
+                            <div class="tile triple double-vertical" style="display: table-cell;">
+                                <img src="images/TalentPassport-icon-380x250.png">
+                                <span class="tile-status title unselectable" style="color: black; margin-left: 15px;">Mijn persoonlijk TalentPaspoort</span>
+                            </div>
+                        </a>
+                        <div class="tile penta double-vertical no-margin-right">
+                            <img src="images/Peter logo links 640x250.png">
                         </div>
                     </div>
                 </div>
-                <div class="balloon bottom menu bg-blue" id="balloon" style="position: absolute; height: 310px; width: 695px; display: none;">
-                    <div class="tile-area clearfix" style="margin: 15px 0 0 15px; padding: 10px 0 0 10px;">
+                <div class="tile-area no-padding clearfix text-area">
+                    <div class="tab-content">
+                        <div class="page-content" id="left">
+                            <?php
+                                $idtext = 1;
+                                include 'phpincludes/getText.php';				
+                                echo $content["content"];
+
+                                if($_SESSION["usertype"] == "administrator"){
+                                    ?>
+                                        <form action="editsqltext.php" method="post">
+                                            <input type="hidden" name="id" value="<?php echo $idtext;?>" />
+                                            <input type="hidden" name="lastpage" value="<?php echo $thispage;?>" />
+                                            <input class="edit-sql" type="image" src="images/pencil_icon_by_zachthesloth-d7l0utc.png" />
+                                        </form>
+                                    <?php
+                                }
+                            ?>
+                        </div>
+                        <div class="page-content" id="right">
+                            <?php
+                                $idtext = 4;
+                                include 'phpincludes/getText.php';
+                                echo $content["content"];
+
+                                if($_SESSION["usertype"] == "administrator"){
+                                    ?>
+                                        <form id="editsqltext" action="editsqltext.php" method="post">
+                                            <input type="hidden" name="id" value="<?php echo $idtext;?>" />
+                                            <input type="hidden" name="lastpage" value="<?php echo $thispage;?>" />
+                                            <input class="edit-sql" type="image" src="images/pencil_icon_by_zachthesloth-d7l0utc.png">
+                                        </form>
+                                    <?php
+                                }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="balloon bottom menu bg-blue" id="balloon">
+                    <div class="tile-area tile-area-balloon clearfix">
 
                         <!-- extra tiles -->
-                        <div class="tile border" id="contextmenu" style="display: table-cell; width: 120px; height: 120px; background-color: #11337b; text-align: center; vertical-align: bottom;">
-                            <span class="tile-status title unselectable" style="color: #11337b; background-color: white;">
-                                test
+                        <div class="tile border" id="contextmenu">
+                            <img src="images/contextmenu/insight-icon.png" style="">
+                            <span class="tile-status title unselectable">
+                                Inzicht
                             </span>
                         </div>
-                        <div class="tile bg-lightRed">
-
-                        </div>
-                        <div class="tile bg-lightRed">
-
-                        </div>
-                        <div class="tile bg-lightRed">
-
-                        </div>
-                        <div class="tile bg-lightRed">
-
-                        </div>
-                        <div class="tile bg-lightRed">
-
-                        </div>
-                        <div class="tile bg-lightRed">
-
-                        </div>
-                        <div class="tile bg-lightRed">
-
-                        </div>
-                        <div class="tile bg-lightRed">
-
-                        </div>
-                        <div class="tile bg-lightRed">
-
+                        <div class="tile border" id="contextmenu">
+                            <img src="images/contextmenu/About-us-icon.png" style="">
+                            <span class="tile-status title unselectable">
+                                Over Ons
+                            </span>
+                        </div><div class="tile border" id="contextmenu">
+                            <img src="images/contextmenu/News-icon.png" style="">
+                            <span class="tile-status title unselectable">
+                                Nieuws
+                            </span>
+                        </div><div class="tile border" id="contextmenu">
+                            <img src="images/contextmenu/Support-icon.png" style="">
+                            <span class="tile-status title unselectable">
+                                Support
+                            </span>
+                        </div><div class="tile border" id="contextmenu">
+                            <img src="images/contextmenu/Proposition-icon.png" style="">
+                            <span class="tile-status title unselectable">
+                                Propositie
+                            </span>
+                        </div><div class="tile border" id="contextmenu">
+                            <img src="images/contextmenu/Competency-icon.png" style="">
+                            <span class="tile-status title unselectable double-line">
+                                Competentie Management
+                            </span>
+                        </div><div class="tile border" id="contextmenu">
+                            <img src="images/contextmenu/Talent-icon.png" style="">
+                            <span class="tile-status title unselectable double-line">
+                                Talent Management
+                            </span>
+                        </div><div class="tile border" id="contextmenu">
+                            <img src="images/contextmenu/Performance-icon.png" style="">
+                            <span class="tile-status title unselectable double-line">
+                                Prestatie Management
+                            </span>
+                        </div><div class="tile border" id="contextmenu">
+                            <img src="images/contextmenu/Application-icon.png" style="">
+                            <span class="tile-status title unselectable">
+                                Vacature
+                            </span>
+                        </div><div class="tile border" id="contextmenu">
+                            <img src="images/contextmenu/Contact-icon.png" style="">
+                            <span class="tile-status title unselectable">
+                                Contact
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <?php
-            $conn = null;
-        ?>
     </body>
 </html>
