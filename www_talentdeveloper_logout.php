@@ -5,7 +5,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="3; url=www_talentdeveloper.php" />
+        <meta http-equiv="refresh" content="3; url=<?php
+                                                       echo $_SESSION["lastpage"];
+                                                   ?>"/>
         <title></title>
         
         <script>

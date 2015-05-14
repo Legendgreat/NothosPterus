@@ -5,6 +5,7 @@
     $password = "9n0dehPsLR";
     $buttontext = "Toevoegen";
     $content;
+    $actionperformed = "Nothing";
 
     // Create connection
     try {
@@ -21,13 +22,15 @@
     }
     
     if (isset($_POST["submit"])&&$_POST['content']) {
-        if(!isset($_POST["id"])){
+        if($_POST["id"] == ("" || null)){
             $newcontent = $_POST["content"];
             add($newcontent);
+            $actionperformed = "Added";
         } else {
             $newcontent = $_POST["content"];
             $id = $_POST["id"];
             edit($id ,$newcontent);
+            $actionperformed = "Edited";
         }
     }
 
@@ -39,7 +42,7 @@
             $statement->bindValue(1, $newcontent, PDO::PARAM_STR);
             $statement->execute();
 
-            header("location: index.php");
+            header('location: '. $_POST["lastpage"]);
         }
 
         catch(PDOException $ex){
@@ -117,5 +120,8 @@
                 <input type="hidden" id="lastpage" name="lastpage" value="<?php echo $_POST["lastpage"];?>" />
             </div>
         </form>
+        <?php
+            echo $actionperformed;
+        ?>
     </body>
 </html>

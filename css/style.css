@@ -37,9 +37,20 @@ div .tile-area.nav-bar .tile-group.two .tile.selected{
 div .tile-area.nav-bar .tile-group.two .tile.selected .tile-status{
     color: #11337b;
     background-color: white;
-    margin-bottom: -5px;
+    margin-bottom: 0px;
+    padding-top: 4px;
+    padding-bottom: 7px;
 }
-
+div .tile-area.nav-bar .tile-group.two .tile.selected .tile-status.double-line{
+    font-size: 90%;
+    margin-bottom: 0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    line-height: 100%;
+}
+div.tile-area.nav-bar .tile-group.two .tile.selected .tile-status.log-out{
+    margin-right: 30px;
+}
 /*TEXT AREA BUSINESS*/
 
 div .tile-area.text-area{
@@ -53,6 +64,7 @@ div .tab-content{
     border: 1px solid #35569a;
     text-decoration-color: white;
     padding: 1em;
+    overflow: auto;
 }
 div .page-content{
     float: left; 
@@ -75,18 +87,27 @@ div .page-content p{
 div .page-content li{
     color: white;
 }
-input.edit-sql{
-    float: right;
-    width: 5%;
+div .page-content#left input.edit-sql{
+    float: left;
+    width: 8%;
     height: auto;
+    margin-top: -26px;
+    margin-left: -41px;
+}
+div .page-content#right input.edit-sql{
+    float: right;
+    width: 8%;
+    height: auto;
+    margin-top: -26px;
+    margin-right: -41px;
 }
 
 /*BALLOON BUSINESS*/
 
 div .balloon#balloon{
-    position: absolute; 
-    height: 310px; 
-    width: 695px; 
+    position: absolute;
+    height: 310px;
+    width: 695px;
     display: none;
 }
 div .balloon .tile-area{
