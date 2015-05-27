@@ -6,7 +6,11 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="refresh" content="3; url=<?php
-                                                       echo $_SESSION["lastpage"];
+                                                       if($_SESSION["lastpage" != null]){
+                                                           echo $_SESSION["lastpage"];
+                                                       } else {
+                                                           echo "Insight";
+                                                       }
                                                    ?>"/>
         <title></title>
         
