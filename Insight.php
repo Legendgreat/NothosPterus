@@ -18,18 +18,16 @@
                 ?>
                 <div class="tile-area no-padding clearfix text-area">
                     <div class="tab-content">
-                        <div class="page-content" id="left">
+                        <div class="page-content" id="left" page="1">
                             <?php
                                 $idtext = 1;
-                                $sqlside = 'left';
                                 include 'phpIncludes/getText.php';
                                 include 'phpIncludes/placeText.php';
                             ?>
                         </div>
-                        <div class="page-content" id="right">
+                        <div class="page-content" id="right" page="1">
                             <?php
                                 $idtext = 2;
-                                $sqlside = 'right';
                                 include 'phpIncludes/getText.php';
                                 include 'phpIncludes/placeText.php';
                             ?>

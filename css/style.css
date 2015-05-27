@@ -25,14 +25,6 @@ div .tile-area.nav-bar .tile-group.two .tile.log-in{
 div .tile-area.nav-bar .tile-group.two .tile.log-in .tile-status{
     color: black;
 }
-div .tile-area.nav-bar .tile-group.two .tile.log-out{
-    display: table-cell;
-    text-align: center;
-}
-div.tile-area.nav-bar .tile-group.two .tile.log-out .tile-status{
-    margin-left: 48px;
-    color: black;
-}
 div .tile-area.nav-bar .tile-group.two .tile.selected{
     display: table-cell;
     width: 120px;
@@ -55,6 +47,9 @@ div .tile-area.nav-bar .tile-group.two .tile.selected .tile-status.double-line{
     padding-top: 2px;
     padding-bottom: 2px;
     line-height: 100%;
+}
+div.tile-area.nav-bar .tile-group.two .tile.selected .tile-status.log-out{
+    margin-right: 30px;
 }
 /*TEXT AREA BUSINESS*/
 

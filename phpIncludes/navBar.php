@@ -6,7 +6,7 @@
             if($_SESSION["usertype"] == "administrator"){
                 ?>
                     <a href="www_talentdeveloper_logout.php">
-                        <div class="tile log-out bg-orange">
+                        <div class="tile log-in bg-orange">
                             <img src="images/logout.png" style="">
                             <span class="tile-status title unselectable">Log Out</span>
                         </div>
@@ -58,7 +58,7 @@
                         break;
                     case 'Competency.php':
                         ?>
-                            <img src="images/contextmenu/competency-icon.png" style="">
+                            <img src="images/contextmenu/competence-icon.png" style="">
                             <span class="tile-status title unselectable">
                                 Competentie
                             </span>
